@@ -1,0 +1,13 @@
+on:
+  pull_request:
+  push:
+    branches:
+      - "master"
+      - "ci/**"  # launch everytime when ci edit's
+
+permissions:
+  contents: read
+
+jobs:
+  test-code:
+    uses: iak-it/general/.github/workflows/python-poetry-test.yml@master
