@@ -1,4 +1,4 @@
-name: test code with poetry environment
+name: Test code with poetry environment
 
 on:
   workflow_call:
