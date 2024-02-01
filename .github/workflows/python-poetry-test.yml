@@ -1,0 +1,30 @@
+on:
+  workflow_call:
+    inputs:
+      python-version:
+        description: "python version"
+        type: string
+        required: false
+        default: "3.12"
+
+permissions:
+  contents: read
+
+jobs:
+
+  build-test:
+
+    strategy:
+      matrix:
+        os: [ windows-latest, ubuntu-latest, macos-latest ]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: setup poetry environment
+        uses: iak-it-actions/python-poetry-setup@v0.0.1
+        with:
+          python-version: ${{ inputs.python-version }}
+
+      - name: test code
+        uses: iak-it-actions/python-poetry-nox@v0.0.1
