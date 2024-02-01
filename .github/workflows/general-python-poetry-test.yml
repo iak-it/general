@@ -1,3 +1,5 @@
+name: test code
+
 on:
   pull_request:
   push:
@@ -11,3 +13,5 @@ permissions:
 jobs:
   test-code:
     uses: iak-it/general/.github/workflows/python-poetry-test.yml@master
+    with:
+      python-version: "3.12"
