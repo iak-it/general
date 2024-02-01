@@ -12,7 +12,7 @@ permissions:
 
 jobs:
 
-  build-test:
+  test-code:
 
     strategy:
       matrix:
